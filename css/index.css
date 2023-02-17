@@ -1,0 +1,28 @@
+/* 공통 */
+.Hello{
+    color: white;
+}
+
+
+
+/* 모바일 */
+@media (max-width: 600px) {
+    .Hello{
+        background-color: aqua;
+    }
+
+}
+
+/* 테블릿 */
+@media (min-width: 601px) and (max-width: 1200px) {
+    .Hello{
+        background-color:brown;
+    }
+}
+
+/* 데스크탑  */
+@media (min-width: 1201px) {
+    .Hello{
+        background-color:blueviolet;
+    }
+}
