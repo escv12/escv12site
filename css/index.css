@@ -21,11 +21,8 @@ body {
     position: sticky;
     top: 0;
     background-color: rgba(255, 255, 255, 0.8);
-    /* Set the background color with transparency */
     backdrop-filter: blur(10px);
-    /* Set the blur effect */
     z-index: 1;
-    /* Set the z-index higher than other elements to display on top of them */
 }
 
 /*================================= logo ==========================================*/
@@ -38,7 +35,7 @@ body {
 .logo img {
     max-width: 100%;
     height: auto;
-    margin-left: 2em;
+    margin-left: 1.5em;
 }
 
 /*================================= logo ==========================================*/
@@ -58,13 +55,11 @@ nav li {
 nav a {
     text-decoration: none;
     color: #1d1d1f;
-    font-size: 1.1em;
-    transition: color 0.1s ease-in-out;
+    font-size: 1em;
 }
 
 .nav_arrow
 {
-    font-size: 1.1em;
     text-rendering: optimizeLegibility;
     text-decoration: none;
     display: inline-block;
@@ -95,21 +90,47 @@ nav li:hover .nav_arrow {
 
 /*================================= nav ==========================================*/
 
+
+/*================================= content ==========================================*/
 .content {
-    background-color: antiquewhite;
+    background-color: white;
     flex: 1 0 auto;
 }
 
+
+/*================================= content ==========================================*/
+
+/*================================= footer ==========================================*/
 .footer {
-    background-color: chartreuse;
     flex-shrink: 0;
+    height: auto;
 }
 
+.contents_footer{
+    margin: 30px 0;
+    
+}
+
+/*================================= footer ==========================================*/
+
 /* 모바일 */
-@media (max-width: 600px) {}
+@media (max-width: 600px) {
+    .footer {
+        background-color: #f2f4f7;
+    }
+
+}
 
 /* 테블릿 */
-@media (min-width: 601px) and (max-width: 1200px) {}
+@media (min-width: 601px) and (max-width: 1200px) {
+    .footer {
+        background-color: #f2f4f7;
+    }
+}
 
 /* 데스크탑  */
-@media (min-width: 1201px) {}
+@media (min-width: 1201px) {
+    .footer {
+        background-color: #f2f4f7;
+    }
+}
