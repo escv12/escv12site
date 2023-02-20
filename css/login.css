@@ -1,22 +1,13 @@
-@import "reset.css";
-
+@import "../../css/reset.css";
 
 .login-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(to top right, #a288ff, #1877f2);
-
 }
 
-.login-form {
-    box-shadow: 0 0 16px rgba(0, 0, 0, 0.3);
-    background-color: white;
-    border-radius: 1em;
-    width: 28em;
-    height: 40em;
-}
+
 
 .login_box_wrap {
     margin-top: 5em;
@@ -44,18 +35,23 @@
     width: 90%;
     border-style: none;
     font-size: 1em;
+    font-family: 'neo';
+}
+
+.login_box>input:focus::placeholder {
+    color: transparent;
 }
 
 .login_box>input:focus {
     outline: none;
 }
 
-.login_box:focus-within,
-.login_box:hover {
+.login_box:focus-within {
     border-bottom-color: #4a90e2;
 }
 
 .login_btn {
+    font-family: 'neo';
     transition: background-color 0.2s ease-in-out;
     background-color: #1877f2;
     border-style: none;
@@ -69,10 +65,12 @@
 .login_btn:hover {
     background-color: #066CD2;
     cursor: pointer;
-    
+
 }
 
 .logo_name {
+    font-family: 'neo';
+    cursor: default;
     width: 80%;
     height: 3em;
     margin-top: 0.5em;
@@ -82,4 +80,36 @@
     justify-content: center;
     font-size: 1.2em;
     margin-bottom: 15%;
+}
+
+@media (max-width: 600px) {
+    .login-container {
+        background-color: white;
+    }
+
+
+    .login-form {
+        background-color: white;
+        width: 100%;
+        height: 70%;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    
+}
+
+@media (min-width: 601px) {
+    .login-container {
+        background: linear-gradient(to top right, #a288ff, #1877f2);
+    }
+
+    .login-form {
+        box-shadow: 0 0 16px rgba(0, 0, 0, 0.3);
+        background-color: white;
+        border-radius: 1em;
+        width: 28em;
+        height: 40em;
+    }
+
 }

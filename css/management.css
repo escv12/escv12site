@@ -28,6 +28,7 @@
 }
 
 .menu-item {
+    font-family: 'neo';
     margin-left: auto;
     margin-right: auto;
     transition: background-color 0.1s ease-in-out;

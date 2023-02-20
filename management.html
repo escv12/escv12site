@@ -7,12 +7,20 @@
     <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/management.css">
     <title>은성 관리자</title>
+    <script>
+      window.onload = function() {
+        var divElement = document.getElementById("first_item");
+        divElement.focus();
+        divElement.style.outline = 'none';
+      };
+    </script>
+
 </head>
 <body>
     <div class="wrapper">
         <div class="menu">
           <img src="" alt="">
-          <div class="menu-item" tabindex="0">
+          <div class="menu-item" id="first_item" tabindex="0">
             <a class="menu-item_element" href="#">기본 정보</a>
           </div>
           <div class="menu-item" tabindex="0">
