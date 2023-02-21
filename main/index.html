@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/index.css">
+    <title>Eunsung Conveyor</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="logo">
+                <a href="#"><img src="../images/logo2.png" alt="Logo" height="16"></a>
+                <nav>
+                    <ul id="nav_menu">
+                        <li>
+                            <a href="#">
+                                쇼핑
+                                <span class="nav_arrow"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                쇼핑
+                                <span class="nav_arrow"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">    
+                                쇼핑
+                                <span class="nav_arrow"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                쇼핑
+                                <span class="nav_arrow"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#">
+                            상담 받기
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            고객 지원
+                            <span class="nav_arrow"></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="content">
+            <img src="../images/logo2.png" alt="Logo" height="200">
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <img src="../images/logo2.png" alt="Logo" height="200">
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <img src="../images/logo2.png" alt="Logo" height="200">
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <img src="../images/logo2.png" alt="Logo" height="200">
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <img src="../images/logo2.png" alt="Logo" height="200">
+
+            <div class="footer">
+                <div class="contents_footer">
+                    <div>
+                        More ways to shop: Find an conveyor Store or other retailer near you.
+                    </div>
+                    <div>
+                        Copyright © 2023 Eunsung conveyor Inc. All rights reserved.Privacy Policy Terms of Use Sales and
+                        Refunds Legal Site Map
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get all li elements with the ID "nav_menu"
+        const navItems = Array.from(document.querySelectorAll('nav ul li'));
+
+        // Get the element with the class "content"
+        const content = document.querySelector('.content');
+
+        // Define a function to handle the mouseover event
+        function handleMouseOver(event) {
+            content.style.background = 'rgba(0, 0, 0, 0.2)';
+            content.style.filter = 'blur(3px)';
+        }
+
+        // Define a function to handle the mouseout event
+        function handleMouseOut(event) {
+            content.style.background = 'white';
+            content.style.filter = 'blur(0px)';
+        }
+
+        // Add a mouseover and mouseout event listener to each li element
+        navItems.forEach(navItem => {
+            navItem.addEventListener('mouseover', handleMouseOver);
+            navItem.addEventListener('mouseout', handleMouseOut);
+        });
+    </script>
+</body>
+
+</html>

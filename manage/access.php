@@ -27,15 +27,16 @@ try {
 
     // Display results
     if ($result && password_verify($_POST["password"], $result["user_pw"])) {
-        // Password is correct, do something here
-        echo "Password is correct";
+        session_start();
+        $_SESSION["user_id"] = $result["user_id"];
+        header("Location: management.php");
+        exit();
     } else {
-        // Password is incorrect, do something else here
-            echo "Password is incorrect";
-            echo $result;
-            echo $result["user_pw"];
+        header("Location: login.php?error=1");
+        exit();
     }
 } catch(PDOException $e) {
-    echo "Error retrieving data: " . $e->getMessage();
+        header("Location: login.php?error=2");
+        exit();
 }
 ?>

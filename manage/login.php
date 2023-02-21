@@ -11,7 +11,24 @@
 </head>
 
 <body>
+    <?php
+        $error = "";
+        if (isset($_GET["error"])) {
+            if ($_GET["error"] == 1) {
+                $error = "아이디 또는 비밀번호가 잘못되었습니다";
+            } else if ($_GET["error"] == 2) {
+                $error = "서버와의 연결을 확인해주세요";
+            }
+        }
+    ?>
+
     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let warning = document.getElementById("warning");
+            warning.textContent = "<?php echo $error; ?>";
+        });
+
+
         function login_click() {
             /* 아이디 패스워드 검사 정규식 a~z A~Z 특수문자 숫자 */
             const re = /^[a-zA-Z0-9!@#$%^&*()_+\-=]{1,20}$/;
@@ -31,7 +48,7 @@
     </script>
 
     <div class="login-container">
-        <form class="login-form" id="login-form" action="./access.php" method="post">
+        <form class="login-form" id="login-form" action="./access" method="post">
             <div class="login_box_wrap">
                 <img src="../images/logo.png" alt="Logo" height="64">
 
