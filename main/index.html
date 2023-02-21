@@ -18,28 +18,20 @@
                 <nav>
                     <ul id="nav_menu">
                         <li>
-                            <a href="#">
-                                쇼핑
-                                <span class="nav_arrow"></span>
-                            </a>
+                            <a href="#">쇼핑</a>
+                            <span class="nav_arrow"></span>
                         </li>
                         <li>
-                            <a href="#">
-                                쇼핑
-                                <span class="nav_arrow"></span>
-                            </a>
+                            <a href="#">쇼핑</a>
+                            <span class="nav_arrow"></span>
                         </li>
                         <li>
-                            <a href="#">    
-                                쇼핑
-                                <span class="nav_arrow"></span>
-                            </a>
+                            <a href="#">쇼핑</a>
+                            <span class="nav_arrow"></span>
                         </li>
                         <li>
-                            <a href="#">
-                                쇼핑
-                                <span class="nav_arrow"></span>
-                            </a>
+                            <a href="#">쇼핑</a>
+                            <span class="nav_arrow"></span>
                         </li>
                     </ul>
                 </nav>
@@ -52,10 +44,39 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
-                            고객 지원
-                            <span class="nav_arrow"></span>
-                        </a>
+                        <a href="#">고객 지원</a>
+                        <span class="nav_arrow"></span>
+                        <div class="drop_menu">
+                            <div class="drop_menu_item">
+                                <div class="inner_item">
+                                    <ul>
+                                        <h2>기기</h2>
+                                        <li><a href="#">aaaaa</a></li>
+                                        <li><a href="#">aaaaa</a></li>
+                                        <li><a href="#">aaaaa</a></li>
+                                        <li><a href="#">aaaaa</a></li>
+                                    </ul>
+
+                                    <ul>
+                                        <h2>어플리케이션</h2>
+                                        <li><a href="#">aaaaa</a></li>
+                                    </ul>
+
+                                    <ul>
+                                        <h2>업무용 제품</h2>
+                                        <li><a href="#">aaaaa</a></li>
+                                    </ul>
+
+                                    <ul>
+                                        <h2>메뉴는 최대 7개 까지만</h2>
+                                        <li><a href="#">aaaaa</a></li>
+                                        <li><a href="#">aaaaa</a></li>
+                                        <li><a href="#">aaaaa</a></li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </div>
                     </li>
                 </ul>
             </nav>
@@ -109,6 +130,22 @@
         navItems.forEach(navItem => {
             navItem.addEventListener('mouseover', handleMouseOver);
             navItem.addEventListener('mouseout', handleMouseOut);
+        });
+
+
+        const header = document.querySelector('.header');
+        let prevScrollpos = window.pageYOffset;
+
+        window.addEventListener('scroll', function () {
+            const currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                // Scrolling up
+                header.classList.remove('header--hidden');
+            } else {
+                // Scrolling down
+                header.classList.add('header--hidden');
+            }
+            prevScrollpos = currentScrollPos;
         });
     </script>
 </body>
