@@ -23,6 +23,12 @@ body {
     transform: translateY(-100%);
 }
 
+.header_nav_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 
 /* 메뉴 화살표 */
 
@@ -39,7 +45,7 @@ body {
 }
 
 
-.header_nav_item:hover>#drop_arrow {
+.header_nav_item:hover>#drop_arrow, .support:hover>#drop_arrow  {
     transform: rotate(-135deg);
     border-color: #4a90e2;
 }
@@ -47,87 +53,75 @@ body {
 
 /*  헤더 네비게이션  */
 
-.header_nav{
+.header_nav {
     display: flex;
     align-items: center;
     box-sizing: border-box;
     flex-wrap: wrap;
 }
 
-.header_nav_item{
+.header_nav_item {
     padding: 25px 30px 25px 30px;
     cursor: pointer;
 }
 
+.header_nav_item:hover > a, .support:hover > a {
+    transition: color 0.2s linear;
+    color: #4a90e2;
+}
+
+
+
+.support{
+    margin-right: 30px;
+    cursor: pointer;
+}
 
 /* 드롭 다운 메뉴 바*/
 
-.drop_down{
+.drop_down {
     background-color: white;
     box-sizing: border-box;
     padding-bottom: 30px;
     padding-left: 190px;
     position: absolute;
-    margin-top: 10px;
+    visibility: hidden;
     padding-top: 20px;
+    margin-top: 10px;
     flex-wrap: wrap;
-    display: none;
+    display: flex;
     width: 100%;
     left: 0;
+    opacity: 0;
+    top: 80%;
+    cursor: default;
+    transform: translateY(-10px);
+    transition: opacity 0.2s, transform 0.2s, visibility 0s 0.2s;
 }
 
-.drop_down>ul>h2{
+.drop_down.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition-delay: 0s;
+}
+
+.drop_down>ul>h2 {
     font-family: 'neo_bold';
     color: #67788a;
 }
 
-.drop_down>ul{
+.drop_down>ul {
     margin-top: 50px;
 }
 
-.drop_down>ul>*{
+.drop_down>ul>* {
     margin-bottom: 20px;
     margin-right: 80px;
 }
 
 
-/*  드롭다운 메뉴  */
-
-
-
-
-
-
-
 /* -------- 헤더 메뉴 전체 ----------- */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -18,21 +18,21 @@ window.onload = function () {
     });
 
 
+
     /* 드롭 메뉴 몇번째 hover */
     const listItems = document.querySelectorAll('.header_nav .header_nav_item');
 
-
     listItems.forEach((li, index) => {
         li.addEventListener('mouseover', () => {
-            const dropDownElement = li.querySelector('.drop_down');
-            if(!dropDownElement) return;
-            dropDownElement.style.display = 'flex';
+          const dropDownElement = li.querySelector('.drop_down');
+          if (!dropDownElement) return;
+          dropDownElement.classList.add('visible');
         });
-
+      
         li.addEventListener('mouseout', () => {
-            const dropDownElement = li.querySelector('.drop_down');
-            if(!dropDownElement) return;
-            dropDownElement.style.display = 'none';
+          const dropDownElement = li.querySelector('.drop_down');
+          if (!dropDownElement) return;
+          dropDownElement.classList.remove('visible');
         });
-    });
+      });
 }

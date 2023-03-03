@@ -1,43 +1,12 @@
 <!DOCTYPE html>
-<!-- 
-
-████████████████████████████████
-████████████████████████████████
-████████████████████████████████
-██████░░░░░░░░░░░░░░░░░░░░░░░░░░
-██████░░░░░░░░░░░░░░░░░░░░░░░░░░
-██████░░░░██████░░░░████████████
-██████░░░░██████░░░░████████████
-██████░░░░██████░░░░████░░░░████
-██████░░░░██████░░░░████░░░░████
-██████░░░░██████░░░░████░░░░████
-██████░░░░██████░░░░████░░░░████
-██████░░░░██████░░░░████░░░░████
-██████░░░░██████░░░░████░░░░████
-██████░░░░██████░░░░████░░░░████
-██████░░░░██████░░░░████████████
-██████░░░░██████░░░░████████████
-
-Welcome to Eunsung Conveyor Inc.
-
--->
-
-
-
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../css/index.css">
-    <title>Eunsung Conveyor</title>
 </head>
-
 <body>
-    <div class="wrapper">
-        <div id="header_wrap">
+<div id="header_wrap">
             <div class="header_nav_container">
                 <ul class="header_nav">
                     <li class="header_nav_item"><a href="#"><img src="../images/logo.jpg" height="25"></a></li>
@@ -83,27 +52,15 @@ Welcome to Eunsung Conveyor Inc.
                             </ul>
                         </div>
                     </li>
-                </ul>         
+                </ul>
+
+                <div class="support">
+                    <a href="#">고객센터</a>
+                    <span id="drop_arrow"></span>
+                </div>
             </div>
         </div>
-
-
-        <div class="content">
-            <img src="../images/logo.jpg" alt="Logo" height="200">
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-            <img src="../images/logo.jpg" alt="Logo" height="200">
-        </div>
-
-        <div class="footer">
         
-        </div>
-    </div>
-
-    <script type="text/javascript" src="../js/header.js"></script>
+        <script type="text/javascript" src="../js/header.js"></script>
 </body>
-
 </html>

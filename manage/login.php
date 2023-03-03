@@ -19,13 +19,18 @@
             } else if ($_GET["error"] == 2) {
                 $error = "서버와의 연결을 확인해주세요";
             }
+            else if ($_GET["error"] == 3) {
+                $error = "로그인을 먼저 해주세요";
+            }else if ($_GET["error"] == 4) {
+                $error = "재로그인이 필요합니다";
+            }
         }
     ?>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             let warning = document.getElementById("warning");
-            warning.textContent = "<?php echo $error; ?>";
+            warning.textContent = "<?php echo htmlspecialchars($error, ENT_QUOTES); ?>";
         });
 
 
@@ -48,7 +53,7 @@
     </script>
 
     <div class="login-container">
-        <form class="login-form" id="login-form" action="./access" method="post">
+        <form class="login-form" id="login-form" action="./access.php" method="post" onsubmit="return false">
             <div class="login_box_wrap">
                 <img src="../images/logo.png" alt="Logo" height="64">
 
@@ -60,7 +65,7 @@
                 </div>
 
                 <div class="login_box">
-                    <input type="password" name="password" id="password" placeholder="비밀번호" maxlength="20"
+                    <input type="password" name="password" id="password" autoComplete="off" placeholder="비밀번호" maxlength="20"
                         onkeyup="if(window.event.keyCode==13){login_click()}">
                 </div>
 
