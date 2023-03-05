@@ -20,7 +20,7 @@
     <div class="menu">
         <img src="../images/logo.png" alt="EUNSUNG">
         <div class="menu-item" tabindex="0" type="button" onclick="location.href='./dashboard.php'">기본 설정<img src="../images/setting.png" alt=""></div>
-        <div class="menu-item" tabindex="0" type="button" onclick="location.href='./category.php'">카테고리<img src="../images/category.png" alt=""></div>
+        <div class="menu-item" tabindex="0" type="button" onclick="location.href='./category.php'">메뉴 관리<img src="../images/category.png" alt=""></div>
         <div class="menu-item" tabindex="0" type="button" onclick="location.href='./product_write.php'">글쓰기<img src="../images/write.png" alt=""></div>
         <div class="menu-item" tabindex="0" type="button" onclick="location.href='./design.php'">디자인<img src="../images/design.png" alt=""></div>
         <div class="menu-item" tabindex="0" type="button" onclick="location.href='./statistics.php'">통계<img src="../images/leader.png" alt=""></div>

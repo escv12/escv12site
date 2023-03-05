@@ -1,0 +1,132 @@
+.right_wrap form h2 {
+    margin-top: 50px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #aaa;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.info_table {
+    text-align: left;
+    width: 100%;
+}
+
+.info_table tr {
+    border-bottom: 1px solid #ccc;
+}
+
+.info_table tr th {
+    background-color: #f3f3f3;
+    padding: 10px;
+    width: 150px;
+    vertical-align: middle;
+}
+
+.info_table tr td {
+    padding-left: 20px;
+    padding-right: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.info_table tr td input:not(.file_input) {
+    border: 1px solid #aaa;
+    padding: 5px;
+    transition: border-color 0.2s ease;
+}
+
+.info_table tr td textarea {
+    border: 1px solid #aaa;
+    transition: border-color 0.2s ease;
+    resize: none;
+    width: 83.5%;
+    height: 100px;
+}
+
+.info_table tr td textarea:focus,
+.info_table tr td input:focus:not(.readonly_input) {
+    outline: none;
+    border-color: #1877f2;
+}
+
+.readonly_input {
+    outline: none;
+    background-color: #eee;
+    cursor: default;
+}
+
+.des{
+    margin-top: 10px;
+    font-size: 12px;
+    cursor: default;
+}
+
+
+.save_btn {
+    border: none;
+    margin-top: 30px;
+    width: 200px;
+    height: 50px;
+    font-size: 1.2em;
+    color: white;
+    font-weight: bold;
+    background-color: #3178f6;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+.save_btn:hover {
+    background-color: #066CD2;
+}
+
+
+.file_input::-webkit-file-upload-button {
+    background-color: #1877f2;
+    transition: background-color 0.2s ease;
+    color: white;
+    border: none;
+    line-height: 16px;
+    cursor: pointer;
+}
+
+.file_input::file-selector-button {
+    margin-right: 10px;
+    width: 80px;
+    height: 30px;
+    line-height: normal;
+}
+
+.file_input::-webkit-file-upload-button:hover {
+    background-color: #066CD2;
+}
+
+#address{
+    width: 30%;
+    min-width:170px;
+    max-width: 400px;
+}
+
+#extraAddress{
+    width: 30%;
+    min-width:170px;
+    max-width: 300px;
+}
+
+#searchAddress{
+    background-color: #1877f2;
+    border: 1px solid #1877f2;
+    transition: background-color 0.2s ease;
+    color: white;
+    border: none;
+    line-height: 16px;
+    margin-right: 10px;
+    width: 80px;
+    height: 27px;
+    line-height: 16px;
+    cursor: pointer;
+}
+
+#searchAddress:hover {
+    background-color: #066CD2;
+}

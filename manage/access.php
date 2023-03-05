@@ -19,7 +19,7 @@ try {
 
 $stmt = $pdo->prepare("SELECT * FROM admin WHERE user_id = :username LIMIT 1");
 $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-$stmt->bindParam(':username', $username);
+$stmt->bindParam(':username', $username, PDO::PARAM_STR);
 
 $stmt->execute();
 
@@ -34,6 +34,8 @@ if ($result && password_verify($_POST["password"], $result["user_pw"])) {
     }
 
     ini_set('session.cookie_secure', 1);
+    ini_set('session.cookie_httponly', 1);
+    ini_set('session.cookie_samesite', 'Strict');
 
     session_start();
     session_regenerate_id(true);

@@ -22,10 +22,7 @@ Welcome to Eunsung Conveyor Inc.
 
 -->
 
-
-
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -51,8 +48,5 @@ Welcome to Eunsung Conveyor Inc.
 
         <?php require("./footer.php");?>
     </div>
-
-
 </body>
-
 </html>
