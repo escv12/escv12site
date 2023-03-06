@@ -1,3 +1,15 @@
+<?php
+
+require('./dbConnect.php');
+
+$stmt = $pdo->query("SELECT * FROM admin WHERE id = 1");
+$row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+// 변수에 저장
+$user_id = $row['user_id'];
+?>
+
+
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -6,7 +18,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/change_info.css">
-    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../favicon/favicon.ico" type="image/x-icon">
     <title>은성 관리자</title>
 </head>
 
@@ -64,7 +76,7 @@
                 <div class="input_form">
                     <span>아이디 변경</span>
                     <div class="login_box">
-                        <input id="username" name="username" type="text" placeholder="아이디" maxlength="20">
+                        <input id="username" name="username" type="text" placeholder="아이디" maxlength="20" value="<?php echo htmlspecialchars($user_id); ?>">
                     </div>
                 </div>
 

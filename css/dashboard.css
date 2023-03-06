@@ -33,6 +33,8 @@
     border: 1px solid #aaa;
     padding: 5px;
     transition: border-color 0.2s ease;
+    line-height: 20px; /* input 태그의 높이와 동일하게 설정 */
+    vertical-align: middle; /* 인라인 요소를 세로로 가운데 정렬 */
 }
 
 .info_table tr td textarea {
@@ -55,7 +57,7 @@
     cursor: default;
 }
 
-.des{
+.des {
     margin-top: 10px;
     font-size: 12px;
     cursor: default;
@@ -101,19 +103,31 @@
     background-color: #066CD2;
 }
 
-#address{
+#address {
     width: 30%;
-    min-width:170px;
+    min-width: 170px;
     max-width: 400px;
 }
 
-#extraAddress{
+#extraAddress {
     width: 30%;
-    min-width:170px;
+    min-width: 170px;
     max-width: 300px;
 }
 
-#searchAddress{
+#address-container {
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+#address-container input {
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#search {
     background-color: #1877f2;
     border: 1px solid #1877f2;
     transition: background-color 0.2s ease;
@@ -122,11 +136,12 @@
     line-height: 16px;
     margin-right: 10px;
     width: 80px;
-    height: 27px;
+    height: 30px;
     line-height: 16px;
     cursor: pointer;
+    line-height: normal;
 }
 
-#searchAddress:hover {
+#search:hover {
     background-color: #066CD2;
 }

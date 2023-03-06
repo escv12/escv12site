@@ -41,7 +41,7 @@ if (empty($new_user_id)) {
     $stmt->execute([$new_user_id]);
 
     if ($stmt->fetchColumn() > 0) {
-        header("Location: error.php?message=The new user ID is already taken.");
+        header("Location: error.php?error=1");
         exit;
     }
 

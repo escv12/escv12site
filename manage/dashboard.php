@@ -1,3 +1,31 @@
+<?php
+require('./dbConnect.php');
+
+// SELECT 쿼리 실행
+$stmt = $pdo->query("SELECT * FROM home_info WHERE id = 1");
+$row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+// 변수에 저장
+$home_name = $row['home_name'];
+$company_name = $row['company_name'];
+$ceo_name = $row['ceo_name'];
+$company_reg_num = $row['company_reg_num'];
+$com_type = $row['com_type'];
+$com_item = $row['com_item'];
+$company_call = $row['company_call'];
+$company_fax = $row['company_fax'];
+$company_mail = $row['company_mail'];
+$support_call = $row['support_call'];
+$support_mail = $row['support_mail'];
+$support_time = $row['support_time'];
+$manager_name = $row['manager_name'];
+$manager_call = $row['manager_call'];
+$com_address = $row['com_address'];
+$postcode = $row['postcode'];
+$extraAddress = $row['extraAddress'];
+$id = $row['id'];
+?>
+
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -5,7 +33,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="../favicon/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="../css/dashboard.css">
   <title>은성 관리자</title>
 </head>
@@ -17,13 +45,13 @@
 
     <div class="right_wrap">
       <div class="title">기본 설정 - *표시는 필수 정보입니다</div>
-      <form action="" method="post" enctype="multipart/form-data">
+      <form action="./uploadInfo.php" method="post" enctype="multipart/form-data">
 
         <h2>홈페이지 기본 정보</h2>
         <table class="info_table">
           <tr>
             <th>홈페이지명 *</th>
-            <td><input type="text"></td>
+            <td><input type="text" name="home_name" value="<?php echo htmlspecialchars($home_name); ?>"></td>
           </tr>
           <tr>
             <th>파비콘</th>
@@ -44,38 +72,42 @@
         <table class="info_table">
           <tr>
             <th>상호 *</th>
-            <td><input type="text"></td>
+            <td><input type="text" name="company_name" value="<?php echo htmlspecialchars($company_name); ?>"></td>
             <th>사업자등록번호 *</th>
-            <td><input type="text"></td>
+            <td><input type="text" name="company_reg_num" value="<?php echo htmlspecialchars($company_reg_num); ?>">
+            </td>
           </tr>
           <tr>
             <th>대표자 *</th>
-            <td><input type="text"></td>
+            <td><input type="text" name="ceo_name" value="<?php echo htmlspecialchars($ceo_name); ?>"></td>
             <th>이메일 *</th>
-            <td><input type="text"></td>
+            <td><input type="text" name="company_mail" value="<?php echo htmlspecialchars($company_mail); ?>"></td>
           </tr>
           <tr>
             <th>업태 *</th>
-            <td><input type="text"></td>
+            <td><input type="text" name="com_type" value="<?php echo htmlspecialchars($com_type); ?>"></td>
             <th>종목 *</th>
-            <td><input type="text"></td>
+            <td><input type="text" name="com_item" value="<?php echo htmlspecialchars($com_item); ?>"></td>
           </tr>
 
           <tr>
             <th>대표전화 *</th>
-            <td><input type="text"></td>
+            <td><input type="text" name="company_call" value="<?php echo htmlspecialchars($company_call); ?>"></td>
             <th>팩스번호</th>
-            <td><input type="text"></td>
+            <td><input type="text" name="company_fax" value="<?php echo htmlspecialchars($company_fax); ?>"></td>
           </tr>
           <tr>
             <th>주소 *</th>
             <td colspan="3">
-              <input type="text" id="postcode" placeholder="우편번호">
-              <br><br>
-              <input type="text" id="address" placeholder="주소">
-              <input type="text" id="extraAddress" placeholder="상세 주소">
-              <br><br>
-              <button type="button" id="searchAddress" onclick="searchAddress()">주소 찾기</button>
+              <input type="text" id="postcode" placeholder="우편번호" name="postcode"
+                value="<?php echo htmlspecialchars($postcode); ?>">
+              <div id="address-container">
+                <input type="text" id="address" placeholder="주소" name="com_address"
+                  value="<?php echo htmlspecialchars($com_address); ?>">
+                <input type="text" id="extraAddress" placeholder="상세 주소" name="extraAddress"
+                  value="<?php echo htmlspecialchars($extraAddress); ?>">
+              </div>
+              <button type="button" id="search" onclick="searchAddress()">주소 찾기</button>
             </td>
           </tr>
         </table>
@@ -85,19 +117,20 @@
         <table class="info_table">
           <tr>
             <th>전화번호 *</th>
-            <td><input type="text"></td>
+            <td><input type="text" name="support_call" value="<?php echo htmlspecialchars($support_call); ?>"></td>
             <th>이메일</th>
-            <td><input type="text"></td>
+            <td><input type="text" name="support_mail" value="<?php echo htmlspecialchars($support_mail); ?>"></td>
           </tr>
           <tr>
             <th>운영시간</th>
-            <td colspan="3"><textarea type="text"></textarea></td>
+            <td colspan="2"><textarea type="text" name="support_time"
+                value="<?php echo htmlspecialchars($support_time); ?>"></textarea></td>
           </tr>
           <tr>
             <th>책임자 성명 *</th>
-            <td><input type="text"></td>
+            <td><input type="text" name="manager_name" value="<?php echo htmlspecialchars($manager_name); ?>"></td>
             <th>책임자 연락처 *</th>
-            <td><input type="text"></td>
+            <td><input type="text" name="manager_call" value="<?php echo htmlspecialchars($manager_call); ?>"></td>
           </tr>
         </table>
 
@@ -156,43 +189,3 @@
 </body>
 
 </html>
-
-<!-- <form action="upload.php" method="post" enctype="multipart/form-data">
-<input type="file" name="file">
-<input type="submit" value="업로드">
-</form> -->
-
-<?php
-// // 업로드된 파일이 있는지 확인
-// if(isset($_FILES['file'])){
-//     // 임시 저장된 파일의 경로와 새로운 파일의 경로와 이름
-//     $tmp_name = $_FILES['file']['tmp_name'];
-//     $new_name = "uploads/".$_FILES['file']['name'];
-
-//     // 원래 파일의 확장자 구하기
-//     $ext = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
-
-//     // 확장자가 .ico인지 확인
-//     if($ext == "ico"){
-//         // 실제 이미지인지 확인
-//         $img_info = getimagesize($tmp_name);
-//         if($img_info[2] == 17){
-//             // 임시 저장된 파일을 새 위치에 옮기고 이름 변경
-//             if(move_uploaded_file($tmp_name,$new_name)){
-//                 echo "파일 업로드 성공";
-//             }else{
-//                 echo "파일 이동 실패";
-//             }
-//         }else{
-//             echo "유효하지 않은 이미지 형식";
-//         }
-//     }else{
-//         echo "허용되지 않은 확장자";
-//     }
-// }
-?>
-<!-- 
-<form action="upload.php" method="post" enctype="multipart/form-data">
-<input type="file" name="file">
-<input type="submit" value="업로드">
-</form> -->

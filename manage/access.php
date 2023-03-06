@@ -1,25 +1,9 @@
 <?php
-// Set environment variables for database credentials
-$db_host = getenv('DB_HOST');
-$db_name = getenv('DB_NAME');
-$db_user = getenv('DB_USER');
-$db_pass = getenv('DB_PASS');
-
-
-// Connect to database using PDO with SSL encryption
-try {
-    $pdo = new PDO("mysql:host=$db_host;dbname=$db_name;charset=utf8mb4;sslmode=require", $db_user, $db_pass);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    error_log("Database connection error: " . $e->getMessage());
-    header("Location: login.php?error=2");
-    exit();
-}
-
+require('./dbConnect.php');
 
 $stmt = $pdo->prepare("SELECT * FROM admin WHERE user_id = :username LIMIT 1");
 $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-$stmt->bindParam(':username', $username, PDO::PARAM_STR);
+$stmt->bindValue(':username', $username, PDO::PARAM_STR);
 
 $stmt->execute();
 
@@ -46,7 +30,7 @@ if ($result && password_verify($_POST["password"], $result["user_pw"])) {
     $_SESSION["user_agent"] = $_SERVER["HTTP_USER_AGENT"];
     $_SESSION['timeout'] = time() + 900; //15분 뒤 자동 로그아웃
 
-    header("Location: management.php");
+    header("Location: dashboard.php");
     exit();
 } else {
     sleep(1); //브루트 포스 공격 방지
