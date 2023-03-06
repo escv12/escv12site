@@ -29,7 +29,7 @@ html, body {
     
 }
 
-.menu {
+.left_menu {
     position: fixed;
     top: 0;
     min-width: 250px;
@@ -57,7 +57,7 @@ html, body {
     background-color: #413b3b6e;
   }
 
-.menu>img {
+.left_menu>img {
     margin-right: auto;
     margin-left: auto;
     padding: 30px;
@@ -67,7 +67,7 @@ html, body {
     filter: invert(100%) saturate(0%) brightness(999%);
 }
 
-.menu-item {
+.left_menu-item {
     font-family: 'neo';
     margin-left: auto;
     margin-right: auto;
@@ -81,22 +81,22 @@ html, body {
     display: block;
 }
 
-.menu-item > img{
+.left_menu-item > img{
     float: right;
     height: 20px;
 }
 
-.menu-item:hover {
+.left_menu-item:hover {
     cursor: pointer;
     background-color: #4d5969;
     text-decoration: none;
 }
 
-.menu-item:last-child {
+.left_menu-item:last-child {
     margin-bottom: 10px;
 }
 
-.menu-item:nth-last-child(3) {
+.left_menu-item:nth-last-child(3) {
     margin-top: auto;
 }
 
@@ -144,7 +144,7 @@ html, body {
 }
 
 @media (max-height: 800px) {
-    .menu>img {
+    .left_menu>img {
         display: none;
     }
 }
@@ -153,30 +153,32 @@ html, body {
 @media (max-width: 800px) {
     .hamburger {
         display: block;
+        z-index: 999;
     }
 
-    .menu {
+    .left_menu {
         display: none;
         position: fixed;
+        z-index: 99;
         top: 0;
         padding-top: 50px;
         font-size: 1.5em;
     }
 
-    .menu-item{
+    .left_menu-item{
         margin-left: 40px;
     }
 
-    .menu > img {
+    .left_menu > img {
         display: none;
     }
 
-    .menu-item > img{
+    .left_menu-item > img{
         height: 30px;
     }
     
 
-    .hamburger.active ~ .menu {
+    .hamburger.active ~ .left_menu {
         display: block;
         width: 100%;
     }
